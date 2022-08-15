@@ -1,0 +1,99 @@
+<main class="container">
+    <section class="addProductContainer" id="userInteraction">
+        <div class="d-flex align-items-center justify-content-around">
+            <h1 class="display-1 text-center textColor my-3">Hello, <span id="userName">{{ userName }}</span></h1>
+            <a href="/logout" class="btn btn-danger btn-lg">Logout</a>
+        </div>
+
+        {{!-- <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="display-5 text-center textColor">Add a Product</h2>
+                        <form action="/products" method="post" id="productForm">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="nombre" id="floatingInputName" placeholder="Nombre del producto" required />
+                                <label for="floatingInputName">Nombre del Producto</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" name="price" id="floatingInputPrice" placeholder="Precio" step="0.01" min="0" required />
+                                <label for="floatingInputPrice">Precio</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" name="stock" id="floatingInputStock" placeholder="Stock" min="0" required />
+                                <label for="floatingInputStock">Stock</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="url" id="floatingInputUrl" placeholder="Image" required />
+                                <label for="floatingInputUrl">URL Imagen</label>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" id="productsBtn">Add Product</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+        <h2 class="display-4 text-center textColor my-3">Lista de Productos</h2>
+        <div class="d-flex justify-content-center mb-5">
+            <a class="btn btn-primary btn-lg" href="/products">Add Product</a>
+        </div>
+
+        {{#if productsArr}}
+            <table class="table table-dark table-hover align-middle" id="productsTable">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Name</th>
+                        <th scope="col" class="text-center">Price</th>
+                        <th scope="col" class="text-center">Stock</th>
+                        <th scope="col" class="text-center">Image</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" id="tableproductData">
+                    {{#each productsArr}}
+                        <tr>
+                            <th scope="row" class="text-center">{{ name }}</th>
+                            <td class="text-center">$ {{ price }}</td>
+                            <td class="text-center">{{ stock }}</td>
+                            <td class="text-center">
+                                <img height="75px" width="120px" src={{ url }} alt={{ name }} />
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="row justify-content-center mt-5" id="warningProducts">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="display-5 text-center">Lista vacia</h2>
+                            <p class="lead text-center">Aún no hay productos registrados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+
+        {{!-- <div class="chatContainer">
+            <h2 class="display-4 text-center textColor my-3">Chat</h2>
+            <h4 class="display-6 text-center textColor">(Compresion <span id="compressionNormalized">00</span>%)</h4>
+
+            <div class="messagesContainer mb-5">
+                <div class="messagesContainer" id="chatContainer">
+                    {{#each chats}}
+                        <p><span class="fw-bold text-primary">{{ author.email }}</span> <span class="fw-normal brown">{{ date }}: </span><span class="fst-italic text-success">{{ message }}</span></p>
+                    {{/each}}
+                </div>
+                <div class="formContainer">
+                    <form action="/chats" method="post" id="chatForm" class="d-flex align-items-center">
+                        <input type="text" class="form-control me-5" placeholder="Message" id="userMessage" required>
+                        <button class="btn btn-primary" id="submitBtnMessage">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div> --}}
+    </section>
+</main>

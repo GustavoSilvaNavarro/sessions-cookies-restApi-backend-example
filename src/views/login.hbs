@@ -1,0 +1,42 @@
+<main>
+    <section class="userInfoContainer" id="userForm">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="display-6 text-center mb-5">Favor ingresar Nombre y E-mail</h2>
+                        <form action="/login" method="post" id="submitFormInfo">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="nombreUser" id="floatingInputNameUser" placeholder="Nombre Usuario" required />
+                                <label for="floatingInputNameUser">Nombre Usuario</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="apellidoUser" id="floatingInputApellido" placeholder="Apellido Usuario" required />
+                                <label for="floatingInputApellido">Apellido Usuario</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" name="emailUser" id="floatingInputEmail" placeholder="Email" required />
+                                <label for="floatingInputEmail">Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" name="edadUser" id="floatingInputEdad" placeholder="Edad" required />
+                                <label for="floatingInputEdad">Edad</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="aliasUser" id="floatingInputAlias" placeholder="Alias" required />
+                                <label for="floatingInputAlias">Alias</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="avatarUser" id="floatingInputAvatar" placeholder="Avatar" required />
+                                <label for="floatingInputAvatar">Avatar</label>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" id="btnFormUser">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
